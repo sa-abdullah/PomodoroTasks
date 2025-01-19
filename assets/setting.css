@@ -1,0 +1,202 @@
+:root {
+    --main-color: black;
+    --secondary-color: #ADADAD;
+  }
+
+#setting_tab {
+    background-color: white;
+    color: black;
+    width: 30vw;
+    height: 300vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    z-index: 1;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+#setting_tab:not([open]) {
+    display: none; 
+}
+
+
+.setting_header {
+    text-align: center;
+    position: relative;
+}
+.setting_header i {
+  position: absolute;
+  right: 0;
+}
+
+#setting_tab hr {
+    width: 100%;
+    margin: 20px 0px;
+}
+
+#setting_tab p {
+    margin: 10px 0px
+}
+
+.set_time {
+    display: flex;
+    justify-content: space-between;
+}
+
+.set_time input, 
+.long_break_interval input, 
+.repeat_container input {
+    font-size: 20px;
+    height: max-content;
+    width: 100px;
+    border: none;
+    background-color: var(--secondary-color);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#setting_tab input:focus,
+#setting_tab select:focus {
+    outline: none;
+    border: none;
+}
+
+
+.toggle_container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+ 
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+  
+  /* The circle inside the slider */
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  
+  input:checked + .slider {
+    background-color: #4CAF50;
+  }
+  
+  
+  input:checked + .slider::before {
+    transform: translateX(26px);
+  }
+
+.sound_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#soundPicker {
+  font-size: 15px;
+  padding: 5px;
+  background-color: rgb(205, 197, 197);
+  border-radius: 5px;
+}
+
+  .volumeSlider_container, 
+  .repeat_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0px;
+  }
+
+  #volumeSlider {
+    width: 150px;
+    height: 6px;
+    appearance: none;
+    /* background: linear-gradient(to right, #4caf50 0%, #4caf50 50%, #ccc 50%, #ccc 100%); */
+    background: rgba(128, 128, 128, 0.646);
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+
+    /* margin-bottom: 40px; */
+  }
+
+  #volumeSlider::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #4caf50;
+    cursor: pointer;
+  }
+
+  #volumeSlider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #4caf50;
+    cursor: pointer;
+  }
+
+
+.color_container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.pick_color, 
+.color_themes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pick_theme {
+  display: flex;
+  gap: 10px;
+}
+
+
+.secColor {
+    color: var(--secondary-color)
+}
+
+
+  

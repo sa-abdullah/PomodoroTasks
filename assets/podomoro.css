@@ -1,0 +1,396 @@
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    /* height: 120vh; */
+    background-color: rgb(46, 114, 17);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 0 100px;
+    
+}
+
+button {
+    color: white;
+    border: none;
+}
+
+summary {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    gap: 10px;
+    margin: auto;
+}
+
+header {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+.header_buttons {
+    display: flex;
+    gap: 7px;
+    position: relative;
+}
+
+.header_btn, 
+.task_right_btn, 
+#return_to_task_btn {
+    /* background-color: transparent; */
+    padding: 5px 10px;
+    border-radius: 3px;
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.196);
+    border: none;
+}
+
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    right: 0;
+    top: 45px;
+    width: 180px;
+    padding: 5px 0;
+    border-radius: 7px;
+}
+
+
+
+.header_buttons,
+.header_buttons_list {
+    display: none; 
+}
+
+
+
+.dropdown_content a {
+    color: black;
+    text-decoration: none;
+    background: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown_content i {
+    margin: 10px;
+}
+
+.dropdown_container:focus ~ .dropdown_content,
+.dropdown_content:focus {
+    display: block;
+}
+
+.dropdown_content a:hover {
+    background-color: rgb(240, 232, 232);
+}
+
+.dropdown_header {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    background-color: none;
+}
+
+#task_content {
+    width: 200px;
+    padding: 5px 0;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.header_buttons_list {
+    display: none;
+}
+
+hr {
+    width: 50%;
+}
+
+main {
+    width: 50%;
+    /* border: 2px solid red; */
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time_counter_board {
+    width: 75%;
+    height: 300px;
+    /* border: 2px solid green; */
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    position: relative;
+}
+
+.counter_button_container {
+    gap: 10px;
+    /* border: 2px solid red; */
+}
+
+.counter_option {
+    background-color: transparent;
+    padding: 5px 15px;
+    /* border: 1px solid white; */
+    border-radius: 5px;
+}
+
+.currentCountTab {
+    background-color: rgba(0, 0, 0, 0.3)
+}
+
+.time_counter {
+    font-size: 130px;
+    font-weight: bold;
+    /* width: 100%; */
+    /* border: 2px solid green; */
+}
+
+.start_button {
+    color: coral;
+    background-color: white;
+    font-size: 25px;
+    border: none;
+    padding: 10px 35px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.next_button {
+    position: absolute;
+    color: white;
+    background-color: transparent;
+    font-size: 25px;
+    padding: 10px 35px;
+    bottom: 20px;
+    right: 50px;
+    display: none;
+}
+
+.show_next_button {
+    display: block;
+}
+
+.rounds_count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.manage_tasks_container {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    font-size: 20px;
+}
+
+.manage_tasks {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    /* border: 2px solid red; */
+}
+
+.hr {
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid white;
+}
+
+
+.add_task {
+    width: 100%;
+    padding: 20px;
+    border: 2px dashed white;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.3);
+    
+}
+
+.add_task > p {
+    text-align: center;
+}
+
+.add_task > p > i {
+    margin-right: 5px;
+}
+
+
+.added_tasks {
+    width: 100%;
+    /* height: 50px; */
+    background-color: rgb(16, 15, 15);
+    border: 2px solid red;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(190, 19, 19);
+    padding: 20px 10px;
+    font-size: 20px;
+}
+
+.added_tasks.clicked {
+    background-color: lightblue;
+}
+
+#added_title_container {
+    display: flex;
+    gap: 5px;
+}
+
+#added_est_container {
+    display: flex;
+    gap: 10px;
+}
+
+.total_task_time {
+    width: 100%;
+    /* height: 50px; */
+    background-color: rgba(255, 255, 255, 0.256);
+    border-top: 2px solid white;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 20px 10px;
+    font-size: 20px;
+    margin: 20px 0;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.total_task_time p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.594);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.total_task_time span {
+    color: white;
+    font-size: 25px;
+    opacity: 1;
+}
+
+
+@media (min-width: 700px) and (max-width: 1024px) {
+
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    header {
+        width: 75%;
+    }
+    
+    hr {
+        width: 75%;
+    }
+    
+    main {
+        width: 75%;
+    }
+    
+    .time_counter_board {
+        height: 350px;
+    }
+}
+
+
+@media (min-width: 0px) and (max-width: 699px) {
+    
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    button {
+        color: white;
+        border: none;
+    }
+    
+    header {
+        width: 95%;
+    }
+    
+    .header_buttons {
+        display: none;
+    }
+
+    .header_buttons_list {
+        font-size: 18px;
+        display: block;
+        text-align: right;
+    }
+
+    .header_buttons_list > ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+    }
+    .header_buttons_list > ul > li {
+        list-style-type: none;
+        align-self: flex-end;
+    }
+    
+    .header_buttons_list > summary {
+        list-style-type: none;
+    }
+
+    
+    hr {
+        width: 95%;
+    }
+    
+    main {
+        width: 95%;
+    }
+    
+    .time_counter_board {
+        width: 100%;
+    }
+
+    .manage_tasks_container {
+        width: 95%;
+    }    
+}
+
